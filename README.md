@@ -16,4 +16,4 @@ Alguns detalhes:
 - Serviços do backend deverão ser em node.js ou php, java spring boot ou utilizar ferramentas do firebase
 - Banco de dados postgresql, mysql ou firebase (realtime, firestore)
 - Frontend: React Native (gerando android), ter tela de splash, listagem do cadastro com possibilidade de visualizar/incluir/editar o registro. Não utilizar expo.
-- Código deverá ser comitado no github e depois nos enviado para análise
+- Código deverá ser comitado no github para análise
