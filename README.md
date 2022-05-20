@@ -1,7 +1,7 @@
 # ReactNativeCRUD
 CRUD básico de usuários utilizando React Native e Firebase
 
-Este projeto segue para implementação os sequintes requisitos:
+Este projeto segue os sequintes requisitos para implementação:
 
 > TESTE CADASTRO BÁSICO USUÁRIO - react native
 
