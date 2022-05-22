@@ -1,4 +1,4 @@
-package com.project.newarchitecture.modules;
+package com.ielconti.reactnativecrud.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;
