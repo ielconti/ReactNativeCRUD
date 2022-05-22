@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "490142691169",
+    "project_id": "reactnativecrud-d8345",
+    "storage_bucket": "reactnativecrud-d8345.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:490142691169:android:77ca2685732f37f33ddf20",
+        "android_client_info": {
+          "package_name": "com.ielconti.reactnativecrud"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "490142691169-c67uuitm8hodjfht0e2l1gn1n5jk6j4n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFz5ornKQDKORyzGhuf95AerK6ZMvFDCU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "490142691169-c67uuitm8hodjfht0e2l1gn1n5jk6j4n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
