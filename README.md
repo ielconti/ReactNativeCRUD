@@ -4,11 +4,11 @@
 
 Basic user CRUD using React Native and Firebase
 
-This project follows the following requirements for implementation:
+This project follows the implementation requirements bellow:
 
 > BASIC USER REGISTRATION TEST - react native
 
-User registration containing the fields:
+User must contain the fields:
 
 - Code
 - Name
@@ -21,7 +21,7 @@ Some details:
 - Frontend: React Native (generating android), have a splash screen, registration listing with the possibility to view/include/edit the record. Do not use expo.
 - Code must be committed on github for analysis
 
-** The application was developed using integration with firebase **
+** The application was developed using firebase integration aproach **
 
 <br />
 ______________________________________________________________________________________________
