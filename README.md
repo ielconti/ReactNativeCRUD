@@ -21,7 +21,7 @@ Some details:
 - Frontend: React Native (generating android), have a splash screen, registration listing with the possibility to view/include/edit the record. Do not use expo.
 - Code must be committed on github for analysis
 
-* The application was developed using integration with firebase *
+** The application was developed using integration with firebase **
 
 <br />
 ______________________________________________________________________________________________
@@ -51,4 +51,4 @@ Alguns detalhes:
 - Frontend: React Native (gerando android), ter tela de splash, listagem do cadastro com possibilidade de visualizar/incluir/editar o registro. Não utilizar expo.
 - Código deverá ser comitado no github para análise
 
-* A aplicação foi desenvolvida utilizando integração com firebase *
+** A aplicação foi desenvolvida utilizando integração com firebase **
