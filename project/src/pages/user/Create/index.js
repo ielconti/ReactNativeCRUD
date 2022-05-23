@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SafeAreaView, StatusBar, Text, View, Image, TouchableOpacity, PermissionsAndroid } from 'react-native';
+import { SafeAreaView, StatusBar, Text, View, Image, TouchableOpacity, PermissionsAndroid, Alert } from 'react-native';
 import firestore from '@react-native-firebase/firestore';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
@@ -9,16 +9,14 @@ import InputDate from '../../../components/InputDate'
 
 import { Styles } from './styles';
 
-const Update = ({ route, navigation }) => {
+const Create = ({ navigation }) => {
 
-    const { selected } = route.params
-    const [image, setImage] = useState(selected.image)
-    const [code, setCode] = useState(`${selected.code}`)
-    const [name, setName] = useState(`${selected.name}`)
-    const [birthdate, setBirthdate] = useState(new Date(selected.birthdate.toDate()))
+    const [image, setImage] = useState(null)
+    const [code, setCode] = useState('')
+    const [name, setName] = useState('')
+    const [birthdate, setBirthdate] = useState(new Date())
 
     const [isLoading, setIsLoading] = useState(false)
-
 
     const callCamera = async () => {
         try {
@@ -123,38 +121,28 @@ const Update = ({ route, navigation }) => {
         }
     }
 
-    const updateUser = () => {
-
+    const createUser = () => {
         setIsLoading(true)
 
+        if(name.length < 1){
+            Alert.alert('', "Define user's name")
+            return
+        }
+
+        if(code.length < 1){
+            Alert.alert('', "Define the user's code")
+            return
+        }
+
         firestore()
-        .collection('user')
-        .doc(selected.id)
-        .update({
+         .collection('user')
+         .add({
             code: code,
             name: name,
             birthdate: birthdate,
             image: image
-        })
-        .then(() => {
-            setIsLoading(false)
-            navigation.reset({
-                index: 0,
-                routes: [{ name: "UserList" }]
-            })
-        })
-        .catch((error) => console.log(error))
-    }
-
-    const deleteUser = () => {
-
-        setIsLoading(true)
-
-        firestore()
-        .collection('user')
-        .doc(selected.id)
-        .delete()
-        .then(() => {
+         })
+         .then(() => {
             setIsLoading(false)
             navigation.reset({
                 index: 0,
@@ -175,10 +163,8 @@ const Update = ({ route, navigation }) => {
                 <TouchableOpacity onPress={popNavigation} >
                     <Icon name='chevron-left' color='#555' size={30} />
                 </TouchableOpacity>
-                <Text style={Styles.title} >Edit</Text>
-                <TouchableOpacity onPress={() => !isLoading && deleteUser()} >
-                    <Text style={Styles.delete} >delete</Text>
-                </TouchableOpacity>
+                <Text style={Styles.title} >Create</Text>
+                <View style={{ width: 30 }} />
             </View>
 
             {
@@ -210,7 +196,7 @@ const Update = ({ route, navigation }) => {
 
             <View style={Styles.input} >
                 <Input
-                    placeholder={'User code'}
+                    placeholder={'User code...'}
                     label={'User code'}
                     keyboard='numeric'
                     state={code}
@@ -221,7 +207,7 @@ const Update = ({ route, navigation }) => {
 
             <View style={Styles.input} >
                 <Input
-                    placeholder={'User name'}
+                    placeholder={'User name...'}
                     label={'User name'}
                     keyboard='default'
                     state={name}
@@ -240,7 +226,7 @@ const Update = ({ route, navigation }) => {
             </View>
 
             <View style={Styles.input} >
-                <TouchableOpacity style={Styles.button} onPress={updateUser} >
+                <TouchableOpacity style={Styles.button} onPress={createUser} >
                     <Icon style={Styles.avatar} name='content-save' color='#fff' size={20} />
                     <Text style={Styles.btext} >Save</Text>
                 </TouchableOpacity>
@@ -250,4 +236,4 @@ const Update = ({ route, navigation }) => {
     );
 }
 
-export default Update;
+export default Create;

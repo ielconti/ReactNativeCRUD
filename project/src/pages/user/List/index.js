@@ -79,7 +79,7 @@ const List = ({ navigation }) => {
       <FAB
         style={Styles.fab}
         icon={(props) => <Icon style={Styles.fabIcon} name='plus' color='#fff' {...props} />}
-        onPress={() => console.log('create')}
+        onPress={() => navigation.navigate('UserCreate')}
       />
 
     </SafeAreaView>
